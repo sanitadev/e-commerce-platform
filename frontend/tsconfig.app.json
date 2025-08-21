@@ -4,9 +4,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
+    "module": "ESNext",
     "types": [
       "node"
-    ]
+    ],
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "src/**/*.ts"
