@@ -7,7 +7,7 @@ import {
 import express from 'express';
 import { join } from 'node:path';
 
-const browserDistFolder = join(import.meta.dirname, '../browser');
+const browserDistFolder = join(__dirname, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
@@ -38,10 +38,12 @@ app.use(
 /**
  * Handle all other requests by rendering the Angular application.
  */
-app.use((req, res, next) => {
+// import type { NodeRenderResponse } from '@angular/ssr/node';
+
+app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
   angularApp
     .handle(req)
-    .then((response) =>
+    .then((response: any) =>
       response ? writeResponseToNodeResponse(response, res) : next(),
     )
     .catch(next);
@@ -51,9 +53,9 @@ app.use((req, res, next) => {
  * Start the server if this module is the main entry point.
  * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
  */
-if (isMainModule(import.meta.url)) {
+if (require.main === module) {
   const port = process.env['PORT'] || 4000;
-  app.listen(port, (error) => {
+  app.listen(port, (error?: Error) => {
     if (error) {
       throw error;
     }
