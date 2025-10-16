@@ -1,0 +1,14 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "extends": "./jsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "types": [
+      "jasmine"
+    ]
+  },
+  "include": [
+    "src/**/*.js"
+, "src/app/services/auth.js", "src/app/services/auth.spec.js", "src/app/services/order.spec.js", "src/app/services/order.js", "src/app/services/payment.spec.js", "src/app/services/payment.js", "src/app/services/product.spec.js", "src/app/app.config.server.js", "src/app/services/product.js", "src/app/app.config.js", "src/app/app.routes.server.js", "src/app/app.routes.js", "src/app/app.spec.js", "src/app/app.js", "src/main.server.js", "src/server.js", "src/main.js"  ]
+}
