@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    // Target environment for the JavaScript output
+    "target": "ES2022",
+
+    // Module system configuration (matches Node.js ESM)
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    
+    // Output and source directories
+    "outDir": "dist",
+    "rootDir": "src",
+    
+    // Core strictness settings
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+
+    // Source maps and declaration files (for publishing or debugging)
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter type checking flags
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Module system options for correctness and compatibility
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force"
+  },
+  // Specify which files to include for compilation
+  "include": ["src/**/*"]
+}
